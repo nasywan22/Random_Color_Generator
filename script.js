@@ -14,19 +14,22 @@ class System {
 
     copy() {
         if (typeof document !== 'undefined') {
-            let text_btn = document.getElementById("copy-btn");
+            let copy_btn = document.getElementById("copy-btn");
 
-            navigator.clipboard.writeText(this.text.textContent).then(() => {
-                console.log("Copied!");
-                text_btn.textContent = "Copied!";
-                animation.notification();
-                setTimeout(() => {
-                    text_btn.textContent = "Copy HEX";
-                }, 3000);
-            }).catch(err => {
-                this.text.textContent = "Failed to copy: " + err;
-                console.log("Failed to copy: " + err);
+            copy_btn.addEventListener('click', () => {
+                navigator.clipboard.writeText(this.text.textContent).then(() => {
+                    console.log("Copied!");
+                    copy_btn.textContent = "Copied!";
+                    animation.notification();
+                    setTimeout(() => {
+                        copy_btn.textContent = "Copy HEX";
+                    }, 3000);
+                }).catch(err => {
+                    this.text.textContent = "Failed to copy: " + err;
+                    console.log("Failed to copy: " + err);
+                })
             })
+
         } else {
             console.log("Document tidak tersedia");
         }
@@ -101,10 +104,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-function copy() {
-    system.copy();
-}
-
+system.copy();
 
 function rotate() {
     animation.rotation();
