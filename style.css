@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 110px;
+    transition: background-color .6s ease;
+}
+
+/* ----------NOTIFICATION DESIGN----------------------- */
+
+.copied-notify {
+    transform: translate(0, -350%);
+    width: 2.4vw;
+    height: 5vh;
+    padding: 10px 0 10px 10px;
+    background-color: rgb(44, 54, 71);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    transition: transform 0.45s ease, width 0.4s ease;
+}
+
+.copied-notify>p {
+    color: white;
+    text-wrap: nowrap;
+    font-family: Poppins;
+}
+
+.copied-notify>i {
+    font-size: 1.2em;
+    color: white;
+    transition: color 0.3s ease, transform 0.5s ease;
+}
+
+/* -------------------------------------------------- */
+
+/* ----------MAIN DESIGN-------------- */
+
+.container {
+    border: 2px solid white;
+    height: 40vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* BUTTON DESIGN */
+.container button {
+    font-family: Poppins;
+    font-weight: 530;
+    border: none;
+    background-color: white;
+    color: black;
+    height: 5vh;
+    width: 20vw;
+    padding: 10px 25px;
+    margin: 0 10px 10px 10px;
+    text-align: center;
+    user-select: none;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.25s;
+}
+
+.container button:hover {
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+}
+
+.container button:active {
+    border: 1px solid white;
+    color: white;
+    transform: scale(0.97);
+}
+/* ================================ */
+
+/* LABEL DESIGN */
+.flex-hex {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-hex p {
+    font-family: Poppins;
+    font-weight: 525;
+    font-size: 1.3em;
+    color: white;
+}
+/* ================================ */
+
+/* -------------------------------------------------- */
+
+/* ----------NEW RANDOM COLOR BUTTON DESIGN-------------- */
+.new-color {
+    background-color: rgb(44, 54, 71);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.new-color:hover {
+    transform: scale(1.2);
+}
+
+.new-color:active {
+    transform: scale(1);
+}
+
+/* ICON DESIGN */
+.new-color i {
+    color: white;
+    transform: rotate(0deg);
+    transition: transform .5s ease;
+}
+
+.new-color i:hover {
+    animation: rotation .5s ease;
+}
+
+/* ANIMATION KEYFRAME */
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* -------------------------------------------------- */

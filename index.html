@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random Color Generator | Helzyon</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+        <!--COPIED NOTIFICATION-->
+        <div class="copied-notify" id="copied-notify">
+            <i class="fa-solid fa-check" id="check-icon"></i>
+            <p id="notify-txt"></p>
+        </div>
+
+        <!--CONTAINER-->
+        <div class="container">
+            <!--HEX LABEL-->
+            <div class="flex-hex">
+                <p id="HEX-label">#FFFFFF</p>
+            </div>
+
+            <!--COPY HEX BUTTON-->
+            <button id="copy-btn">Copy HEX
+                <div class="bg"></div>
+            </button>
+        </div>
+
+        <!--RANDOMIZER HEX BUTTON-->
+        <button class="new-color" id="reload-btn">
+            <i class="fa-solid fa-rotate-right" id="putar"></i>
+        </button>
+
+        <!--LINK SCRIPT JAVASCRIPT-->
+        <script src="script.js"></script>
+    </body>
+
+</html>
