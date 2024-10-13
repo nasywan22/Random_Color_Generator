@@ -82,35 +82,6 @@ class Animate {
     }
 }
 
-class EventListener {
-    reload = document.getElementById('reload-btn');
-
-    spaceEvent() {
-        document.addEventListener('keydown', (e) => {
-            if (e.key === ' ') {
-                e.preventDefault();
-                animation.rotation();
-
-                let randHEX = system.randomString();
-                system.text.textContent = randHEX;
-
-                document.querySelector("body").style.backgroundColor = randHEX;
-            }
-        });
-    }
-
-    reloadBtn() {
-        this.reload.addEventListener('click', () => {
-            animation.rotation();
-
-            let randHEX = system.randomString();
-            system.text.textContent = randHEX;
-
-            document.querySelector("body").style.backgroundColor = randHEX;
-        })
-    }
-}
-
 // FUNCTION SLEEP / DELAY
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -118,12 +89,32 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const notifyText = document.getElementById("notify-txt");
 const system = new System();
 const animation = new Animate();
-const keyListener = new EventListener();
 
 // =========================EVENT LISTENER============================== //
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === ' ') {
+        e.preventDefault();
+        animation.rotation();
+
+        let randHEX = system.randomString();
+        system.text.textContent = randHEX;
+
+        document.querySelector("body").style.backgroundColor = randHEX;
+    }
+});
+
 system.copy();
-keyListener.spaceEvent();
-keyListener.reloadBtn();
+
+function rotate() {
+    animation.rotation();
+
+    let randHEX = system.randomString();
+    system.text.textContent = randHEX;
+
+    document.querySelector("body").style.backgroundColor = randHEX;
+}
+
 // =================================================================== //
 
 // FOOTER
